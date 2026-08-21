@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EXPO SONIC - CONVENCIONES DE SONIC EN ARGENTINA</title>
+  <title>Expo Sonic - Convenciones en Argentina</title>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-29W3Y5CDRT"></script>
@@ -15,26 +15,26 @@
   </script>
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" type="image/png" href="favicon3.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <!-- Fuentes: Righteous para títulos, System para legibilidad profesional -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
 
-  <!-- Schema.org -->
+  <!-- Schema.org corregido -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Sonic Fest",
-    "alternateName": ["Sonic Fest Argentina", "Sonic Expo Fest", "Sonic Argentina"],
-    "description": "Eventos y convenciones de Sonic en Argentina. Para todas las edades y familias.",
+    "name": "Expo Sonic",
+    "alternateName": ["Sonic Fest Argentina", "Expo Sonic", "Sonic Argentina"],
+    "description": "Eventos y convenciones familiares de Sonic en Argentina.",
     "sameAs": [
       "https://www.instagram.com/sonicfestok/",
       "https://www.youtube.com/@SonicFestArg"
@@ -54,278 +54,288 @@
   </script>
 
   <style>
-    /* Variables de colores (Estilo Sonic) */
+    /* CSS Profesional - Estilo Glassmorphism y Moderno */
     :root {
-      --primary-color: #0056b3;
-      --secondary-color: #ffcc00;
-      --text-light: #ffffff;
-      --bg-overlay: rgba(10, 10, 15, 0.85);
+      --accent: #ffcc00;
+      --accent-hover: #ffaa00;
+      --bg-glass: rgba(15, 20, 30, 0.7);
+      --border-glass: rgba(255, 255, 255, 0.1);
+      --text: #f0f4f8;
     }
 
-    /* Reseteo y Body */
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Righteous', sans-serif;
-      color: var(--text-light);
-      background-color: #111;
       min-height: 100vh;
+      font-family: system-ui, -apple-system, sans-serif;
+      color: var(--text);
       opacity: 0;
       transition: opacity 0.5s ease;
+      background-color: #050810;
     }
+
     body.loaded {
       opacity: 1;
     }
-    
-    /* Fondo con imagen */
+
+    /* Fondo elegante */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: url('Images/fondo.jpg') center/cover no-repeat;
-      filter: brightness(0.3);
+      background: url('Images/IMG-20260129-WA0114.jpg') center/cover;
+      filter: brightness(0.2) contrast(1.2);
       z-index: -1;
     }
 
-    /* Barra de Navegación */
-    nav {
-      background: rgba(0, 0, 0, 0.95);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
+    /* Header Navbar Profesional */
+    .modern-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      border-bottom: 3px solid var(--primary-color);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      width: 100%;
+      background: rgba(5, 8, 16, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      box-sizing: border-box;
+      z-index: 1000;
     }
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 1rem;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background: var(--primary-color);
+
+    .nav-brand {
+      font-family: 'Righteous', sans-serif;
+      font-size: 1.5rem;
       color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .nav-highlight {
+      background: linear-gradient(135deg, #0056b3, #003d82);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
+    }
+
+    .nav-highlight:hover {
+      background: linear-gradient(135deg, #0073e6, #0056b3);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
     }
 
     /* Contenedor Principal */
-    .container {
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 30px;
-      background: var(--bg-overlay);
-      border-radius: 15px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+    .main-wrapper {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero {
       text-align: center;
-      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 50px;
     }
 
-    /* Imágenes */
-    .main-logo {
+    .hero-logo {
+      max-width: 350px;
       width: 100%;
-      max-width: 450px;
-      margin: 0 auto 20px;
-      border-radius: 15px;
-      display: block;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
-    .gallery-image {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 10px;
-      margin: 20px auto;
-      border: 3px solid var(--primary-color);
-      display: block;
-    }
-
-    /* Textos */
-    h1 {
-      font-size: 2.5rem;
-      color: var(--secondary-color);
-      text-transform: uppercase;
-      margin: 10px 0;
-      text-shadow: 2px 2px 4px #000;
-    }
-    .description {
-      font-size: 1.3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
       margin-bottom: 30px;
     }
 
-    /* Botones */
-    .button {
-      display: inline-block;
-      background: var(--primary-color);
-      color: #fff;
-      padding: 15px 30px;
-      margin: 10px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .button:hover {
-      transform: scale(1.05);
-      background: #0073e6;
-      border-color: var(--secondary-color);
-      box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
+    .hero h1 {
+      font-family: 'Righteous', sans-serif;
+      font-size: 3rem;
+      color: var(--accent);
+      margin: 0 0 15px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* Redes Sociales */
-    .socials {
-      margin: 30px 0;
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Grid de Acciones (Botones modernos) */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .action-card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 25px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
+      justify-content: center;
     }
-    .social-button {
+
+    .action-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    .action-card.primary {
+      background: rgba(255, 204, 0, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Galería / Banners */
+    .media-section {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 50px;
+      align-items: center;
+    }
+
+    .promo-banner {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+      border: 1px solid var(--border-glass);
+    }
+
+    /* FAQ / Info Section */
+    .info-panel {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 50px;
+    }
+
+    details {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 15px 0;
+    }
+    details:last-child {
+      border-bottom: none;
+    }
+    
+    summary {
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
       display: flex;
       align-items: center;
       gap: 10px;
-      background: #222;
-      padding: 12px 25px;
-      border-radius: 8px;
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.1rem;
-      transition: 0.3s;
-      border: 1px solid rgba(255,255,255,0.2);
     }
-    .social-button img {
-      width: 24px;
-    }
-    .discord-button:hover { background: #5865F2; border-color: #5865F2; }
-    .instagram-button:hover { background: #E1306C; border-color: #E1306C; }
-
-    /* Acordeón (FAQ) */
-    .faq-section {
-      margin-top: 50px;
-      text-align: left;
-    }
-    details {
-      background: rgba(255, 255, 255, 0.05);
-      margin-bottom: 15px;
-      padding: 15px 20px;
-      border-radius: 8px;
-      border-left: 4px solid var(--primary-color);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    details:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-    summary {
-      font-size: 1.2rem;
-      font-weight: bold;
-      outline: none;
-      color: var(--secondary-color);
-    }
+    
     details p {
-      margin-top: 15px;
+      color: #94a3b8;
       line-height: 1.6;
-      font-family: sans-serif; /* Para mejor legibilidad en textos largos */
+      margin: 15px 0 0 0;
+      padding-left: 30px;
+    }
+
+    details a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    details a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navegación unificada del header -->
-  <nav>
-    <a href="https://sonicfest.com.ar/entradas.html">⚡ PRÓXIMOS EVENTOS</a>
-    <a href="https://sonicfest.com.ar/fiestas.html">📷 FIESTAS PASADAS</a>
-    <a href="https://sonicfest.com.ar/artistas.html">🎨 ARTISTAS</a>
-    <a href="https://sonicfest.com.ar/convocatoriastands.html">🛒 CONVOCATORIA STANDS</a>
-    <a href="https://sonicfest.com.ar/thebadniks.html">🎸 THE BADNIKS</a>
+  <!-- Header Profesional -->
+  <nav class="modern-nav">
+    <div class="nav-brand">EXPO SONIC</div>
+    <a href="https://exposonic.github.io/eventos.html" class="nav-highlight">⚡ PRÓXIMOS EVENTOS</a>
   </nav>
 
-  <!-- Contenedor Principal -->
-  <div class="container">
+  <div class="main-wrapper">
     
-    <!-- Logo Principal -->
-    <img src="Images/Expo Sonic Logo.jpg" class="main-logo" alt="Expo Sonic Logo">
+    <!-- Hero Section -->
+    <header class="hero">
+      <img src="Images/Expo Sonic Logo.jpg" class="hero-logo" alt="Expo Sonic Logo">
+      <h1>Expo Sonic</h1>
+      <p>La convención definitiva para fans de Sonic en Argentina 🇦🇷</p>
+    </header>
 
-    <h1>BIENVENIDOS A LA EXPO SONIC</h1>
-    
-    <img src="ObeliscoFotos/OBELISCO.jpg" class="gallery-image" alt="SONIC FEST OBELISCO FOTO PRINCIPAL">
-    
-    <p class="description">
-      CONVENCIONES DE SONIC EN ARGENTINA 🇦🇷. 
-    </p>
-
-    <!-- Botones Principales -->
-    <a class="button" href="https://www.instagram.com/p/DZ7pXacDs8S/?igsh=dzlpa2g1OGhwdHUz" target="_blank" rel="noopener noreferrer">
-      PRÓXIMA: EXPO SONIC 27/09 - AGENDÁ LA FECHA! - 100% FREE
-    </a>
-
-    <a class="button" href="https://sonicfest.com.ar/convocatoriastands" target="_blank" rel="noopener noreferrer">
-      CONVOCATORIA DE STANDS
-    </a>
-
-    <img src="Images/Expo-Sonic-Fest-27-de-Septiembre-de-2026.png" class="gallery-image" alt="Expo Sonic Fest - Septiembre 2026">
-
-    <!-- Sección Discord -->
-    <div class="socials">
-      <span>UNITE A LA CONVOCATORIA DE ARTISTAS. DIBUJÁ TU SONIC:</span>
-      <a href="https://discord.com/invite/FwZ6xXezKY" target="_blank" class="social-button discord-button">
-        <img src="Images/DISCORD.png" alt="Discord"> DISCORD SONIC FEST
+    <!-- Botonera / Cards -->
+    <section class="action-grid">
+      <a href="https://www.instagram.com/p/DZ7pXacDs8S/?igsh=dzlpa2g1OGhwdHUz" target="_blank" rel="noopener noreferrer" class="action-card primary">
+        <span>Próxima Expo 27/09</span>
+        <span style="font-size: 0.85rem; font-weight: normal; margin-top: 5px; color: #fff;">100% Gratuita - ¡Agendá la fecha!</span>
       </a>
-    </div>
-
-    <a class="button" href="https://maps.app.goo.gl/rjuS7tSSPfJ5QVW1A" target="_blank" rel="noopener noreferrer">
-      CÓMO LLEGAR - GOOGLE MAPS - CLUB MATIENZO 
-    </a>
-
-    <!-- Sección Instagram -->
-    <div class="socials">
-      <a href="https://www.instagram.com/exposonic/" target="_blank" class="social-button instagram-button">
-        <img src="Images/INSTAGRAM.png" alt="Instagram"> INSTAGRAM SONIC EXPO FEST
+      
+      <a href="https://sonicfest.com.ar/convocatoriastands" target="_blank" rel="noopener noreferrer" class="action-card">
+        <span>Convocatoria de Stands</span>
       </a>
-    </div>
 
-    <a class="button" href="https://sonicfest.com.ar/infoexpo1" target="_blank" rel="noopener noreferrer">
-      FOTOS ÚLTIMA EXPO FEST 01/06/2025 CLUB MATIENZO
-    </a>
+      <a href="https://maps.app.goo.gl/rjuS7tSSPfJ5QVW1A" target="_blank" rel="noopener noreferrer" class="action-card">
+        <span>📍 Cómo llegar</span>
+        <span style="font-size: 0.85rem; font-weight: normal; margin-top: 5px;">Club Cultural Matienzo (Google Maps)</span>
+      </a>
 
-    <img src="Images/Expo/IMG-20260102-WA0056(1).jpg" class="gallery-image" alt="SONIC EXPO FEST STANDS DE MERCHANDISING">
+      <a href="https://www.instagram.com/exposonic/" target="_blank" class="action-card">
+        <span>📸 Instagram Oficial</span>
+      </a>
+    </section>
 
-    <!-- Sección FAQ -->
-    <div class="faq-section">
+    <!-- Banners e Imágenes -->
+    <section class="media-section">
+      <img src="Images/Expo-Sonic-Fest-27-de-Septiembre-de-2026.png" class="promo-banner" alt="Expo Sonic Fest - Septiembre 2026">
+      
+      <a href="https://sonicfest.com.ar/infoexpo1" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: bold; margin-top: 10px;">
+        Ver fotos de la última Expo Fest (01/06) ↗
+      </a>
+      
+      <img src="Images/Expo/IMG-20260102-WA0056(1).jpg" class="promo-banner" alt="Stands de Merchandising">
+    </section>
+
+    <!-- Acordeón FAQ -->
+    <section class="info-panel">
       <details>
-        <summary>📘 SOBRE NOSOTROS</summary>
-        <p style="text-align:center;">
-          👉 <a href="https://www.sonicfest.com.ar/aboutexposonic" target="_blank" style="color:#ffcc00; text-decoration:underline; font-weight:bold;">¿QUÉ ES SONIC EXPO FEST?</a>
-        </p>
+        <summary>📘 Sobre Nosotros</summary>
+        <p>👉 <a href="https://www.sonicfest.com.ar/aboutexposonic" target="_blank">¿Qué es Sonic Expo Fest?</a></p>
       </details>
-
       <details>
-        <summary>📜 REGLAS</summary>
-        <p style="text-align:center;">
-          👉 <a href="https://www.sonicfest.com.ar/reglasexpo" target="_blank" style="color:#ffcc00; text-decoration:underline; font-weight:bold;">VER REGLAS</a>
-        </p>
+        <summary>📜 Reglas del Evento</summary>
+        <p>👉 <a href="https://www.sonicfest.com.ar/reglasexpo" target="_blank">Ver Reglamento Oficial</a></p>
       </details>
-
       <details>
-        <summary>🔒 POLÍTICA DE INTEGRIDAD Y SEGURIDAD</summary>
-        <p>En construcción</p>
+        <summary>🛡️ Seguridad en la Expo</summary>
+        <p>Contamos con personal de seguridad, control de acceso y supervisión del establecimiento. Si notás una situación insegura, acerquese al personal autorizado.</p>
       </details>
+    </section>
 
-      <details>
-        <summary>🛡️ SEGURIDAD</summary>
-        <p>SÍ, EN TODAS LAS SONIC EXPO FEST HAY PERSONAL DE SEGURIDAD, CONTROL DE ACCESO Y SUPERVISIÓN DEL ESTABLECIMIENTO. SI NOTÁS UNA SITUACIÓN INSEGURA O PERSONA SOSPECHOSA, ACERCATE AL PERSONAL DE SEGURIDAD, QUIENES ESTÁN AUTORIZADOS PARA TOMAR ACCIÓN.</p>
-      </details>
-    </div>
-
-    <!-- Placeholders a mantener -->
+    <!-- Placeholders Originales -->
     <div id="botones-placeholder"></div>
     <div id="donaciones-placeholder"></div>
     <div id="footer-placeholder"></div>
@@ -333,11 +343,10 @@
   </div>
 
   <script>
-    // Transición suave para evitar parpadeo al cargar (FOUC)
+    // FOUC Prevention
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
     });
   </script>
-  <script src="js/main.js"></script>
 </body>
 </html>
