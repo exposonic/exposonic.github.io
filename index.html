@@ -27,32 +27,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Expo Sonic",
-    "alternateName": ["Sonic Argentino", "Expo Sonic", "Sonic Argentina"],
-    "description": "Eventos y convenciones familiares de Sonic en Argentina.",
-    "sameAs": [
-      "https://www.instagram.com/sonicfestok/",
-      "https://www.youtube.com/@SonicFestArg"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "areaServed": "AR",
-      "availableLanguage": "Spanish"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Buenos Aires",
-      "addressCountry": "AR"
-    }
-  }
-  </script>
-
   <style>
     :root {
       --accent: #ffcc00;
@@ -76,7 +50,6 @@
       opacity: 1;
     }
 
-    /* Fondo extra oscuro con la imagen correcta */
     body::before {
       content: "";
       position: fixed;
@@ -86,7 +59,6 @@
       z-index: -1;
     }
 
-    /* Header Navbar Profesional */
     .modern-nav {
       position: sticky;
       top: 0;
@@ -110,7 +82,6 @@
       letter-spacing: 1px;
     }
 
-    /* Nuevo estilo elegante para Próximos Eventos */
     .nav-link-events {
       color: var(--accent);
       text-decoration: none;
@@ -131,14 +102,12 @@
       box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
     }
 
-    /* Contenedor Principal */
     .main-wrapper {
       max-width: 900px;
       margin: 60px auto;
       padding: 0 20px 40px 20px;
     }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       margin-bottom: 50px;
@@ -170,7 +139,6 @@
       line-height: 1.6;
     }
 
-    /* Grid de Acciones */
     .action-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -207,7 +175,6 @@
       color: var(--accent);
     }
 
-    /* Estilos para logos minimalistas dentro de las tarjetas */
     .card-title {
       display: inline-flex;
       align-items: center;
@@ -221,11 +188,77 @@
       object-fit: contain;
       vertical-align: middle;
     }
+
+    /* --- NUEVA SECCIÓN DE INFORMACIÓN --- */
+    .info-section {
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 50px;
+      line-height: 1.7;
+      color: #cbd5e1;
+    }
+
+    .info-section h2 {
+      font-family: 'Righteous', sans-serif;
+      color: var(--accent);
+      font-size: 2rem;
+      margin-top: 0;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    .info-section h3 {
+      color: #fff;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 8px;
+      margin-top: 35px;
+      font-size: 1.3rem;
+    }
+
+    .info-section p {
+      margin-bottom: 15px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-list li {
+      background: rgba(255, 255, 255, 0.03);
+      margin-bottom: 12px;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .team-card {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .team-card strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <nav class="modern-nav">
     <div class="nav-brand">EXPO SONIC</div>
     <a href="https://exposonic.github.io/eventos.html" class="nav-link-events">PROXIMOS EVENTOS &rarr;</a>
@@ -233,14 +266,12 @@
 
   <div class="main-wrapper">
     
-    <!-- Hero Section -->
     <header class="hero">
       <img src="Images/Expo Sonic Logo.jpg" class="hero-logo" alt="Expo Sonic Logo">
       <h1>Expo Sonic</h1>
       <p>Convención para fans de Sonic de todas las edades en Argentina: Shows, sector comercial con 40 stands, freeplay, torneos, concurso de cosplays, trivias, sorteos, DJ y banda en vivo de Sonic</p>
     </header>
 
-    <!-- Botonera -->
     <section class="action-grid">
       <a href="https://www.instagram.com/p/DZ7pXacDs8S/?igsh=dzlpa2g1OGhwdHUz" target="_blank" rel="noopener noreferrer" class="action-card primary">
         <span>Próxima Expo 27/09</span>
@@ -275,14 +306,62 @@
       </a>
     </section>
 
-    <!-- Placeholder del Footer -->
-    <div id="footer-placeholder"></div>
+    <!-- Nueva Sección Integrada -->
+    <section class="info-section">
+      <h2>LA EXPERIENCIA EXPO SONIC</h2>
+      <p>Expo Sonic es la primera convención de Sonic en Argentina donde la pasión por el erizo azul se vive al máximo. De fans para fans. Los adolescentes y menores de edad acompañados por sus padres van a poder vivir una experiencia inolvidable.</p>
 
+      <h3>Nuestra Misión</h3>
+      <p>Ofrecer una experiencia única que celebre todo lo relacionado con Sonic: videojuegos, música, arte, cosplay y cultura fan. Expo Sonic busca unir a los fans de todas las edades en un ambiente seguro, divertido y lleno de actividades.</p>
+
+      <h3>¿Por qué es especial?</h3>
+      <ul class="info-list">
+        <li>🎮 <strong>Evento para todas las edades:</strong> Desde los más pequeños hasta los más nostálgicos.</li>
+        <li>🎯 <strong>Actividades temáticas:</strong> Trivia Soniccienta, karaoke con canciones icónicas, torneos y speedruns sorpresa.</li>
+        <li>🎵 <strong>Shows en vivo:</strong> La banda The Badniks y Los Ultrasónicos tocando música de Sonic.</li>
+        <li>🎨 <strong>Zona de arte y stands:</strong> Merchandising de Sonic, tatuajes temporales y espacio para dibujar.</li>
+        <li>⭐ <strong>Concursos de cosplay:</strong> Premios para los más creativos.</li>
+      </ul>
+
+      <h3>Nuestra Historia & Valores</h3>
+      <p>Expo Sonic nace de una comunidad que desde marzo de 2024 organiza fiestas y encuentros temáticos para fans. Ahora damos el salto a una convención completa, con un formato más grande y familiar, manteniendo la esencia de la comunidad.</p>
+      <ul class="info-list">
+        <li>💙 <strong>Comunidad:</strong> Creado por fans, para fans.</li>
+        <li>🛡️ <strong>Diversión segura:</strong> Contamos con protocolos y personal de seguridad en todos los eventos.</li>
+        <li>🌈 <strong>Inclusión:</strong> Cosplayers, gamers, artistas y curiosos son bienvenidos.</li>
+      </ul>
+
+      <h3>El Equipo Detrás del Evento</h3>
+      <p>Agradecemos todo el apoyo en la organización a figuras talentosísimas. Cada ladrillo es construido por las siguientes personas:</p>
+      
+      <div class="team-grid">
+        <div class="team-card">
+          <strong>🎙️ Conducción y Animación</strong>
+          Brendushcka: La Embajadora de Sega en Argentina, conductora y streamer.
+        </div>
+        <div class="team-card">
+          <strong>🎸 Música en Vivo (The Badniks)</strong>
+          Tin Giovini (Batería), Eddie Cruz (Guitarra), Ivan Colman (Bajo), Leandro y Matias Cellili (Voz y Guitarra), Thiagomii (Teclados).
+        </div>
+        <div class="team-card">
+          <strong>🎧 DJ Insanik</strong>
+          Nuestro DJ oficial, altamente conocido en la escena de música retro 80s de la Ciudad de Buenos Aires.
+        </div>
+        <div class="team-card">
+          <strong>🎨 Arte y Logística</strong>
+          KayllatheCat, RusstikArt y más de 100 artistas colaborando en decoraciones y actividades.
+        </div>
+        <div class="team-card">
+          <strong>🎪 Coordinación de Stands</strong>
+          Leandro Ustares y Tanya: Coordinando la estructura del evento y abarcando más de 50 emprendimientos.
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
   </div>
 
-  <!-- Script para inyectar el footer -->
   <script src="js/main.js"></script>
-
   <script>
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
