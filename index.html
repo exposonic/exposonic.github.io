@@ -22,12 +22,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fuentes: Righteous para títulos, System para legibilidad profesional -->
+  <!-- Fuentes: Righteous para títulos, Montserrat para el botón del header -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Righteous&display=swap" rel="stylesheet" />
 
-  <!-- Schema.org corregido -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,10 +54,8 @@
   </script>
 
   <style>
-    /* CSS Profesional - Estilo Glassmorphism y Moderno */
     :root {
       --accent: #ffcc00;
-      --accent-hover: #ffaa00;
       --bg-glass: rgba(15, 20, 30, 0.7);
       --border-glass: rgba(255, 255, 255, 0.1);
       --text: #f0f4f8;
@@ -71,21 +69,20 @@
       color: var(--text);
       opacity: 0;
       transition: opacity 0.5s ease;
-      background-color: #050810;
+      background-color: #020408;
     }
 
     body.loaded {
       opacity: 1;
     }
 
-    /* Fondo elegante */
+    /* Fondo extra oscuro */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: url('Images/IMG-20260129-WA0114.jpg') center/cover;
-      filter: brightness(0.2) contrast(1.2);
+      background: linear-gradient(rgba(2, 4, 8, 0.88), rgba(2, 4, 8, 0.95)), url('Images/IMG-20260129-WA0114.jpg') center/cover;
       z-index: -1;
     }
 
@@ -94,7 +91,7 @@
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(5, 8, 16, 0.85);
+      background: rgba(2, 4, 8, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-glass);
@@ -113,17 +110,20 @@
       letter-spacing: 1px;
     }
 
+    /* Tipografía distinta para el botón de próximos eventos */
     .nav-highlight {
+      font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #0056b3, #003d82);
       color: #fff;
       text-decoration: none;
       padding: 10px 20px;
       border-radius: 8px;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 0.95rem;
       border: 1px solid rgba(255,255,255,0.2);
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
+      letter-spacing: 0.5px;
     }
 
     .nav-highlight:hover {
@@ -136,7 +136,7 @@
     .main-wrapper {
       max-width: 900px;
       margin: 60px auto;
-      padding: 0 20px;
+      padding: 0 20px 40px 20px;
     }
 
     /* Hero Section */
@@ -171,7 +171,7 @@
       line-height: 1.6;
     }
 
-    /* Grid de Acciones (Botones modernos) */
+    /* Grid de Acciones */
     .action-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -207,72 +207,11 @@
       border-color: var(--accent);
       color: var(--accent);
     }
-
-    /* Galería / Banners */
-    .media-section {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      margin-bottom: 50px;
-      align-items: center;
-    }
-
-    .promo-banner {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-      border: 1px solid var(--border-glass);
-    }
-
-    /* FAQ / Info Section */
-    .info-panel {
-      background: var(--bg-glass);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-glass);
-      border-radius: 12px;
-      padding: 30px;
-      margin-bottom: 50px;
-    }
-
-    details {
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 15px 0;
-    }
-    details:last-child {
-      border-bottom: none;
-    }
-    
-    summary {
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    details p {
-      color: #94a3b8;
-      line-height: 1.6;
-      margin: 15px 0 0 0;
-      padding-left: 30px;
-    }
-
-    details a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    details a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header Profesional -->
+  <!-- Header -->
   <nav class="modern-nav">
     <div class="nav-brand">EXPO SONIC</div>
     <a href="https://exposonic.github.io/eventos.html" class="nav-highlight">⚡ PRÓXIMOS EVENTOS</a>
@@ -287,7 +226,7 @@
       <p>La convención definitiva para fans de Sonic en Argentina 🇦🇷</p>
     </header>
 
-    <!-- Botonera / Cards -->
+    <!-- Botonera -->
     <section class="action-grid">
       <a href="https://www.instagram.com/p/DZ7pXacDs8S/?igsh=dzlpa2g1OGhwdHUz" target="_blank" rel="noopener noreferrer" class="action-card primary">
         <span>Próxima Expo 27/09</span>
@@ -303,36 +242,13 @@
         <span style="font-size: 0.85rem; font-weight: normal; margin-top: 5px;">Club Cultural Matienzo (Google Maps)</span>
       </a>
 
+      <a href="https://sonicfest.com.ar/infoexpo1" target="_blank" rel="noopener noreferrer" class="action-card">
+        <span>📸 Ver fotos de la última Expo</span>
+      </a>
+
       <a href="https://www.instagram.com/exposonic/" target="_blank" class="action-card">
-        <span>📸 Instagram Oficial</span>
+        <span>📱 Instagram Oficial</span>
       </a>
-    </section>
-
-    <!-- Banners e Imágenes -->
-    <section class="media-section">
-      <img src="Images/Expo-Sonic-Fest-27-de-Septiembre-de-2026.png" class="promo-banner" alt="Expo Sonic Fest - Septiembre 2026">
-      
-      <a href="https://sonicfest.com.ar/infoexpo1" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-weight: bold; margin-top: 10px;">
-        Ver fotos de la última Expo Fest (01/06) ↗
-      </a>
-      
-      <img src="Images/Expo/IMG-20260102-WA0056(1).jpg" class="promo-banner" alt="Stands de Merchandising">
-    </section>
-
-    <!-- Acordeón FAQ -->
-    <section class="info-panel">
-      <details>
-        <summary>📘 Sobre Nosotros</summary>
-        <p>👉 <a href="https://www.sonicfest.com.ar/aboutexposonic" target="_blank">¿Qué es Sonic Expo Fest?</a></p>
-      </details>
-      <details>
-        <summary>📜 Reglas del Evento</summary>
-        <p>👉 <a href="https://www.sonicfest.com.ar/reglasexpo" target="_blank">Ver Reglamento Oficial</a></p>
-      </details>
-      <details>
-        <summary>🛡️ Seguridad en la Expo</summary>
-        <p>Contamos con personal de seguridad, control de acceso y supervisión del establecimiento. Si notás una situación insegura, acerquese al personal autorizado.</p>
-      </details>
     </section>
 
     <!-- Placeholders Originales -->
@@ -343,7 +259,6 @@
   </div>
 
   <script>
-    // FOUC Prevention
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
     });
