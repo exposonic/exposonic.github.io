@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(response => response.text())
       .then(data => {
         headerPlaceholder.innerHTML = data;
-        const pageTitle = document.querySelector('meta[name="page-title"]')?.content || 'Sonic Fest Argentina';
+        const pageTitle = document.querySelector('meta[name="page-title"]')?.content || 'Expo Sonic - Convenciones de Sonic en Argentina';
         document.title = pageTitle;
-      });
+      })
+      .catch(err => console.log("Error al cargar el header:", err));
   }
 
   // --- CARGAR BOTONES DE ENLACE (Shortcuts) ---
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         footerPlaceholder.innerHTML = data;
         const yearElement = document.getElementById('year');
         if (yearElement) yearElement.textContent = new Date().getFullYear();
-      });
+      })
+      .catch(err => console.log("Error al cargar el footer:", err));
   }
 });
