@@ -239,7 +239,52 @@ body::before {
   font-size: 1.1rem;
 }
 
+/* --- GALERÍA GRID PERFECTA (Tipo Instagram) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0; /* Sin espacio entre imágenes */
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.gallery-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Las hace todas perfectamente cuadradas */
+    object-fit: cover; /* Evita que se deformen */
+    display: block;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.gallery-image:hover {
+    filter: brightness(1.2);
+}
+
+/* --- LIGHTBOX (Visor de imágenes a pantalla completa) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
 
 
 
