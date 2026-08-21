@@ -22,10 +22,10 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fuentes: Righteous para títulos, Montserrat para el botón del header -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Righteous&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -110,26 +110,25 @@
       letter-spacing: 1px;
     }
 
-    /* Tipografía distinta para el botón de próximos eventos */
-    .nav-highlight {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #0056b3, #003d82);
-      color: #fff;
+    /* Nuevo estilo elegante para Próximos Eventos */
+    .nav-link-events {
+      color: var(--accent);
       text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 204, 0, 0.3);
+      border-radius: 20px;
+      background: rgba(255, 204, 0, 0.05);
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
-      letter-spacing: 0.5px;
     }
 
-    .nav-highlight:hover {
-      background: linear-gradient(135deg, #0073e6, #0056b3);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 86, 179, 0.6);
+    .nav-link-events:hover {
+      background: rgba(255, 204, 0, 0.15);
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
     }
 
     /* Contenedor Principal */
@@ -214,7 +213,7 @@
   <!-- Header -->
   <nav class="modern-nav">
     <div class="nav-brand">EXPO SONIC</div>
-    <a href="https://exposonic.github.io/eventos.html" class="nav-highlight">⚡ PRÓXIMOS EVENTOS</a>
+    <a href="https://exposonic.github.io/eventos.html" class="nav-link-events">CALENDARIO DE EVENTOS &rarr;</a>
   </nav>
 
   <div class="main-wrapper">
@@ -256,7 +255,7 @@
 
   </div>
 
-  <!-- Script necesario para inyectar el footer -->
+  <!-- Script para inyectar el footer -->
   <script src="js/main.js"></script>
 
   <script>
