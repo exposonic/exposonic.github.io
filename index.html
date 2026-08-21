@@ -76,13 +76,13 @@
       opacity: 1;
     }
 
-    /* Fondo extra oscuro */
+    /* Fondo extra oscuro con la imagen correcta */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: linear-gradient(rgba(2, 4, 8, 0.88), rgba(2, 4, 8, 0.95)), url('Images/IMG-20260129-WA0114.jpg') center/cover;
+      background: linear-gradient(rgba(2, 4, 8, 0.88), rgba(2, 4, 8, 0.95)), url('Images/fondo.jpg') center/cover;
       z-index: -1;
     }
 
@@ -251,12 +251,13 @@
       </a>
     </section>
 
-    <!-- Placeholders Originales -->
-    <div id="botones-placeholder"></div>
-    <div id="donaciones-placeholder"></div>
+    <!-- Placeholder del Footer -->
     <div id="footer-placeholder"></div>
 
   </div>
+
+  <!-- Script necesario para inyectar el footer -->
+  <script src="js/main.js"></script>
 
   <script>
     window.addEventListener('load', () => {
