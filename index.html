@@ -206,6 +206,21 @@
       border-color: var(--accent);
       color: var(--accent);
     }
+
+    /* Estilos para logos minimalistas dentro de las tarjetas */
+    .card-title {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .card-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -237,16 +252,26 @@
       </a>
 
       <a href="https://maps.app.goo.gl/rjuS7tSSPfJ5QVW1A" target="_blank" rel="noopener noreferrer" class="action-card">
-        <span>📍 Cómo llegar</span>
+        <span class="card-title">
+          <img src="Images/Google Maps PNG.png" alt="Google Maps" class="card-icon" />
+          Cómo llegar
+        </span>
         <span style="font-size: 0.85rem; font-weight: normal; margin-top: 5px;">Club Cultural Matienzo (Google Maps)</span>
       </a>
 
       <a href="https://sonicfest.com.ar/infoexpo1" target="_blank" rel="noopener noreferrer" class="action-card">
-        <span>📸 Ver fotos de la última Expo</span>
+        <span class="card-title">
+          <img src="Images/Sonic Mania PNG.png" alt="Sonic Mania" class="card-icon" />
+          Ver fotos de la última Expo
+        </span>
+        <span style="font-size: 0.85rem; font-weight: normal; margin-top: 5px; color: #cbd5e1;">Expo Sonic 1/6/2025</span>
       </a>
 
       <a href="https://www.instagram.com/exposonic/" target="_blank" class="action-card">
-        <span>📱 Instagram Oficial</span>
+        <span class="card-title">
+          <img src="Images/Instagram PNG.png" alt="Instagram" class="card-icon" />
+          Instagram Oficial
+        </span>
       </a>
     </section>
 
