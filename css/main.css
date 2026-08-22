@@ -341,5 +341,15 @@ details p {
 }
 
 
+a.nav-brand {
+  transition: color 0.3s ease;
+}
 
+a.nav-brand:hover {
+  color: var(--accent);
+}
+
+a.nav-brand:hover svg {
+  stroke: var(--accent);
+}
 
