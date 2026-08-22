@@ -287,7 +287,58 @@ body::before {
 }
 
 
+/* --- ESTILOS PARA ACORDEONES (DETAILS / SUMMARY) --- */
+details {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-glass);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 18px;
+    transition: all 0.3s ease;
+}
 
+details[open] {
+    border-color: var(--accent);
+    background: rgba(255, 204, 0, 0.05);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
+}
+
+summary {
+    font-weight: bold;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 1.1rem;
+    list-style: none; /* Oculta la flecha por defecto en Chrome/Safari */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Oculta la flecha por defecto en navegadores Webkit */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Icono personalizado de + y - */
+summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--accent);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+details p {
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: #cbd5e1;
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
 
 
 
