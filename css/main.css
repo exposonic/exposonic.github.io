@@ -353,3 +353,101 @@ a.nav-brand:hover svg {
   stroke: var(--accent);
 }
 
+/* ==========================================
+   CARRUSEL SLIDER TIPO INSTAGRAM
+   ========================================== */
+.instagram-slider-container {
+  position: relative;
+  max-width: 600px; /* Tamaño tipo post de Instagram */
+  margin: 0 auto 30px auto;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.instagram-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+
+.instagram-slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.instagram-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.instagram-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Botones de navegación (flechas) */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+.slider-btn.prev {
+  left: 12px;
+}
+
+.slider-btn.next {
+  right: 12px;
+}
+
+/* Indicadores de Puntos (Dots tipo Instagram) */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
