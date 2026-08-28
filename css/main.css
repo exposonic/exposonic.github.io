@@ -5,6 +5,10 @@
   --text: #f0f4f8;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,6 +18,7 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease;
   background-color: #020408;
+  overflow-x: hidden; /* Evita cualquier scrollbar horizontal indeseado */
 }
 
 body.loaded {
@@ -44,7 +49,6 @@ body::before {
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  box-sizing: border-box;
   z-index: 1000;
 }
 
@@ -53,6 +57,16 @@ body::before {
   font-size: 1.5rem;
   color: #fff;
   letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-brand:hover {
+  color: var(--accent);
+}
+
+.nav-brand:hover svg {
+  stroke: var(--accent);
 }
 
 .nav-link-events {
@@ -80,6 +94,7 @@ body::before {
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px 40px 20px;
+  width: 100%;
 }
 
 /* Hero */
@@ -91,6 +106,7 @@ body::before {
 .hero-logo {
   max-width: 350px;
   width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.8);
   margin-bottom: 30px;
@@ -98,7 +114,7 @@ body::before {
 
 .hero h1 {
   font-family: 'Righteous', sans-serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: var(--accent);
   margin: 0 0 15px 0;
   text-transform: uppercase;
@@ -117,7 +133,7 @@ body::before {
 /* Grid de Botones */
 .action-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
   margin-bottom: 50px;
 }
@@ -220,7 +236,7 @@ body::before {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
@@ -241,130 +257,120 @@ body::before {
 
 /* --- GALERÍA GRID PERFECTA (Tipo Instagram) --- */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0; /* Sin espacio entre imágenes */
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .gallery-image {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Las hace todas perfectamente cuadradas */
-    object-fit: cover; /* Evita que se deformen */
-    display: block;
-    cursor: pointer;
-    transition: filter 0.3s ease;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid var(--border-glass);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-image:hover {
-    filter: brightness(1.2);
+  filter: brightness(1.15);
+  transform: scale(1.02);
 }
 
 /* --- LIGHTBOX (Visor de imágenes a pantalla completa) --- */
 .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0; 
-    left: 0;
-    width: 100vw; 
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
-    align-items: center;
-    justify-content: center;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
 }
 
 .lightbox.active {
-    display: flex;
+  display: flex;
 }
 
 .lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 4px;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
 }
 
 /* --- ESTILOS PARA ACORDEONES (DETAILS / SUMMARY) --- */
 details {
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--border-glass);
-    border-radius: 8px;
-    margin-bottom: 15px;
-    padding: 18px;
-    transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 18px;
+  transition: all 0.3s ease;
 }
 
 details[open] {
-    border-color: var(--accent);
-    background: rgba(255, 204, 0, 0.05);
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
+  border-color: var(--accent);
+  background: rgba(255, 204, 0, 0.05);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
 }
 
 summary {
-    font-weight: bold;
-    color: var(--accent);
-    cursor: pointer;
-    font-size: 1.1rem;
-    list-style: none; /* Oculta la flecha por defecto en Chrome/Safari */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  font-weight: bold;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 1.1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Oculta la flecha por defecto en navegadores Webkit */
 summary::-webkit-details-marker {
-    display: none;
+  display: none;
 }
 
-/* Icono personalizado de + y - */
 summary::after {
-    content: '+';
-    font-size: 1.5rem;
-    line-height: 1;
-    color: var(--accent);
-}
-
-details[open] summary::after {
-    content: '-';
-}
-
-details p {
-    margin-top: 15px;
-    margin-bottom: 0;
-    color: #cbd5e1;
-    line-height: 1.6;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px;
-}
-
-a.nav-brand {
-  transition: color 0.3s ease;
-}
-
-a.nav-brand:hover {
+  content: '+';
+  font-size: 1.5rem;
+  line-height: 1;
   color: var(--accent);
 }
 
-a.nav-brand:hover svg {
-  stroke: var(--accent);
+details[open] summary::after {
+  content: '-';
+}
+
+details p {
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
 }
 
 /* ==========================================
-   CARRUSEL SLIDER COMPACTO (FIXED & RESPONSIVE)
+   CARRUSEL SLIDER COMPACTO TIPO INSTAGRAM
    ========================================== */
 .instagram-slider-container {
   position: relative;
   width: 100%;
-  max-width: 420px; /* Tamaño compacto idéntico a un feed de Instagram */
+  max-width: 450px;
   margin: 0 auto 40px auto;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border-glass);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
   background: #000;
-  box-sizing: border-box;
 }
 
 .instagram-slider {
@@ -374,20 +380,19 @@ a.nav-brand:hover svg {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Oculta scrollbar Firefox */
+  scrollbar-width: none;
 }
 
 .instagram-slider::-webkit-scrollbar {
-  display: none; /* Oculta scrollbar Chrome/Safari */
+  display: none;
 }
 
 .instagram-slide {
   flex: 0 0 100%;
   width: 100%;
-  min-width: 100%;
+  max-width: 100%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,22 +403,22 @@ a.nav-brand:hover svg {
   width: 100%;
   max-width: 100%;
   height: auto;
+  max-height: 550px;
   display: block;
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Botones dentro del slider */
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.65);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 36px;
-  height: 36px;
+  color: var(--text);
+  border: 1px solid var(--border-glass);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
@@ -439,7 +444,6 @@ a.nav-brand:hover svg {
   right: 10px;
 }
 
-/* Dots Indicadores */
 .slider-dots {
   position: absolute;
   bottom: 12px;
@@ -447,7 +451,7 @@ a.nav-brand:hover svg {
   transform: translateX(-50%);
   display: flex;
   gap: 6px;
-  padding: 5px 12px;
+  padding: 6px 12px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
   border-radius: 20px;
@@ -459,7 +463,7 @@ a.nav-brand:hover svg {
   height: 6px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.4);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .dot.active {
