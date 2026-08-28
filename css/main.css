@@ -353,18 +353,21 @@ a.nav-brand:hover svg {
   stroke: var(--accent);
 }
 
+
+
 /* ==========================================
-   CARRUSEL SLIDER TIPO INSTAGRAM
+   CARRUSEL SLIDER COMPACTO TIPO INSTAGRAM
    ========================================== */
 .instagram-slider-container {
   position: relative;
-  max-width: 600px; /* Tamaño tipo post de Instagram */
-  margin: 0 auto 30px auto;
-  background: #000;
+  width: 100%;
+  max-width: 450px; /* Tamaño compacto responsivo */
+  margin: 0 auto 40px auto;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--border-glass);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: #000;
 }
 
 .instagram-slider {
@@ -373,77 +376,88 @@ a.nav-brand:hover svg {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; /* Oculta scrollbar Firefox */
 }
 
 .instagram-slider::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none; /* Oculta scrollbar Chrome/Safari */
 }
 
 .instagram-slide {
   flex: 0 0 100%;
   width: 100%;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .instagram-slide img {
   width: 100%;
   height: auto;
+  max-height: 550px;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Botones de navegación (flechas) */
+/* Botones flotantes sobre la imagen */
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  border: none;
-  width: 36px;
-  height: 36px;
+  color: var(--text);
+  border: 1px solid var(--border-glass);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   backdrop-filter: blur(4px);
-  transition: background 0.3s ease, opacity 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .slider-btn:hover {
   background: var(--accent);
   color: #000;
+  border-color: var(--accent);
 }
 
 .slider-btn.prev {
-  left: 12px;
+  left: 10px;
 }
 
 .slider-btn.next {
-  right: 12px;
+  right: 10px;
 }
 
-/* Indicadores de Puntos (Dots tipo Instagram) */
+/* Indicadores de Puntos (Dots) */
 .slider-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
   gap: 6px;
-  padding: 12px 0;
-  background: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+  z-index: 10;
 }
 
 .dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
   transition: all 0.3s ease;
 }
 
@@ -451,3 +465,4 @@ a.nav-brand:hover svg {
   background: var(--accent);
   transform: scale(1.3);
 }
+
