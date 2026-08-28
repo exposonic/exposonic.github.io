@@ -101,6 +101,38 @@
       </a>
     </section>
 
+    <!-- Carrusel Estilo Instagram -->
+    <div class="instagram-slider-container">
+      <button class="slider-btn prev" id="sliderPrev" aria-label="Anterior">&#10094;</button>
+      <button class="slider-btn next" id="sliderNext" aria-label="Siguiente">&#10095;</button>
+      
+      <div class="instagram-slider" id="instaSlider">
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(4).png" alt="Expo Sonic - Post 1"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(5).png" alt="Expo Sonic - Post 2"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(6).png" alt="Expo Sonic - Post 3"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(7).png" alt="Expo Sonic - Post 4"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(8).png" alt="Expo Sonic - Post 5"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(9).png" alt="Expo Sonic - Post 6"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(10).png" alt="Expo Sonic - Post 7"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(11).png" alt="Expo Sonic - Post 8"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(12).png" alt="Expo Sonic - Post 9"></div>
+        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(13).png" alt="Expo Sonic - Post 10"></div>
+      </div>
+
+      <div class="slider-dots" id="sliderDots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
     <section class="info-section">
       <h2>LA EXPERIENCIA EXPO SONIC</h2>
       <p>Expo Sonic es la convención de Sonic en Argentina donde la pasión por el erizo azul se vive al máximo. De fans para fans. Los adolescentes y menores de edad acompañados por sus padres van a poder vivir una experiencia inolvidable.</p>
@@ -160,6 +192,27 @@
   <script>
     window.addEventListener('load', () => {
       document.body.classList.add('loaded');
+    });
+
+    // Control del Carrusel tipo Instagram
+    const slider = document.getElementById('instaSlider');
+    const prevBtn = document.getElementById('sliderPrev');
+    const nextBtn = document.getElementById('sliderNext');
+    const dots = document.querySelectorAll('.dot');
+
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+    });
+
+    slider.addEventListener('scroll', () => {
+      const activeIndex = Math.round(slider.scrollLeft / slider.clientWidth);
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeIndex);
+      });
     });
   </script>
 </body>
