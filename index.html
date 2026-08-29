@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expo Sonic - Convenciones de Sonic en Argentina</title>
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-29W3Y5CDRT"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,7 +13,6 @@
     gtag('config', 'G-29W3Y5CDRT');
   </script>
 
-  <!-- Favicons -->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" type="image/png" href="favicon3.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -22,15 +20,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fuentes & CSS External -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
   
-  <!-- AQUÍ ESTÁ EL TRUCO PARA FORZAR LA ACTUALIZACIÓN (?v=2.0) -->
   <link rel="stylesheet" href="css/main.css?v=2.0" />
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,13 +53,42 @@
 </head>
 <body>
 
-  <!-- Placeholder Header (Inyectado por JS o cargado estático) -->
   <div id="header-placeholder"></div>
 
   <div class="main-wrapper">
     
     <header class="hero">
-      <img src="Images/Expo Sonic Logo.jpg" class="hero-logo" alt="Expo Sonic Logo">
+      <div class="instagram-slider-container">
+        <button class="slider-btn prev" id="sliderPrev" aria-label="Anterior">❮</button>
+        <button class="slider-btn next" id="sliderNext" aria-label="Siguiente">❯</button>
+        
+        <div class="instagram-slider" id="instaSlider">
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(4).png" alt="Expo Sonic Post 1"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(5).png" alt="Expo Sonic Post 2"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(6).png" alt="Expo Sonic Post 3"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(7).png" alt="Expo Sonic Post 4"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(8).png" alt="Expo Sonic Post 5"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(9).png" alt="Expo Sonic Post 6"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(10).png" alt="Expo Sonic Post 7"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(11).png" alt="Expo Sonic Post 8"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(12).png" alt="Expo Sonic Post 9"></div>
+          <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(13).png" alt="Expo Sonic Post 10"></div>
+        </div>
+
+        <div class="slider-dots" id="sliderDots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
       <h1>Expo Sonic</h1>
       <p>Convención para fans de Sonic de todas las edades en Argentina: Shows, sector comercial con 40 stands, freeplay, torneos, concurso de cosplays, trivias, sorteos, DJ y banda en vivo de Sonic</p>
     </header>
@@ -102,38 +126,6 @@
         </span>
       </a>
     </section>
-
-    <!-- Carrusel Instagram Compacto y Deslizable -->
-    <div class="instagram-slider-container">
-      <button class="slider-btn prev" id="sliderPrev" aria-label="Anterior">&#10094;</button>
-      <button class="slider-btn next" id="sliderNext" aria-label="Siguiente">&#10095;</button>
-      
-      <div class="instagram-slider" id="instaSlider">
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(4).png" alt="Expo Sonic Post 1"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(5).png" alt="Expo Sonic Post 2"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(6).png" alt="Expo Sonic Post 3"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(7).png" alt="Expo Sonic Post 4"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(8).png" alt="Expo Sonic Post 5"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(9).png" alt="Expo Sonic Post 6"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(10).png" alt="Expo Sonic Post 7"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(11).png" alt="Expo Sonic Post 8"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(12).png" alt="Expo Sonic Post 9"></div>
-        <div class="instagram-slide"><img src="Images/Promociones/Aboutexpo/OTROS POSTS(13).png" alt="Expo Sonic Post 10"></div>
-      </div>
-
-      <div class="slider-dots" id="sliderDots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
 
     <section class="info-section">
       <h2>LA EXPERIENCIA EXPO SONIC</h2>
@@ -186,7 +178,6 @@
       </div>
     </section>
 
-    <!-- Placeholder Footer -->
     <div id="footer-placeholder"></div>
   </div>
 
